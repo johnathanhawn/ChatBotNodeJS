@@ -30,10 +30,8 @@ services:
     links:
       - mongo-chatbotnodejs
     networks:
-      backend-bot:
-        name: backend-bot
-      frontend-bot:
-        name: frontend-bot
+      - backend-bot
+      - frontend-bot
     ports:
       - 8080:3000
     deploy:
@@ -50,6 +48,4 @@ services:
 
 networks:
   backend-bot:
-    name: backend-bot
   frontend-bot:
-    name: frontend-bot
