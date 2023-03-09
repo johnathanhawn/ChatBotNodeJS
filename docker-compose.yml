@@ -5,8 +5,7 @@ services:
     image: mongo:latest
     container_name: mongo_chatbotnodejs
     volumes:
-      - ./data/db/:/data/db
-      # - /etc/localtime:/etc/localtime:ro
+      - /Users/jhawn/chatbot:/data/db
     networks:
       - backend-bot
     ports:
