@@ -1,7 +1,6 @@
 version: "3"
 
 services:
-  
   mongo-chatbotnodejs:
     image: mongo:latest
     container_name: mongo_chatbotnodejs
@@ -31,8 +30,10 @@ services:
     links:
       - mongo-chatbotnodejs
     networks:
-      - backend-bot
-      - frontend-bot
+      backend-bot:
+        name: backend-bot
+      frontend-bot:
+        name: frontend-bot
     ports:
       - 8080:3000
     deploy:
@@ -49,8 +50,6 @@ services:
 
 networks:
   backend-bot:
-    external:
-      name: backend-bot
+    name: backend-bot
   frontend-bot:
-    external:
-      name: frontend-bot
+    name: frontend-bot
